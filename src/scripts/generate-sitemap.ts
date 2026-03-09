@@ -53,6 +53,8 @@ ${urls.join('\n')}
 }
 
 const sitemap = generateSitemap()
-const outputPath = resolve(import.meta.dirname, '../../public/sitemap.xml')
-writeFileSync(outputPath, sitemap, 'utf-8')
-console.log(`Sitemap generated with ${sitemap.split('<url>').length - 1} URLs at ${outputPath}`)
+const publicPath = resolve(import.meta.dirname, '../../public/sitemap.xml')
+const distPath = resolve(import.meta.dirname, '../../dist/sitemap.xml')
+writeFileSync(publicPath, sitemap, 'utf-8')
+writeFileSync(distPath, sitemap, 'utf-8')
+console.log(`Sitemap generated with ${sitemap.split('<url>').length - 1} URLs`)
