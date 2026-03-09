@@ -123,9 +123,11 @@ function renderPage(page: PageData): string {
     <meta property="og:url" content="${SITE_URL}${page.canonical}" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Mudanzas Pereira" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="${SITE_URL}/mudanza-pereira.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeHtml(page.title)}" />
-    <meta name="twitter:description" content="${escapeHtml(page.description)}" />`
+    <meta name="twitter:description" content="${escapeHtml(page.description)}" />
+    <meta name="twitter:image" content="${SITE_URL}/mudanza-pereira.jpg" />`
 
   html = html.replace('</head>', `${headTags}\n  </head>`)
 

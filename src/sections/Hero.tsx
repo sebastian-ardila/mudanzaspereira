@@ -26,7 +26,8 @@ export default function Hero() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-32 md:py-40 w-full">
-        <div className="max-w-4xl">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div>
           {/* Tag */}
           <div
             className={`transition-all duration-700 delay-200 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
@@ -93,6 +94,26 @@ export default function Hero() {
                 {item}
               </div>
             ))}
+          </div>
+        </div>
+
+          {/* Hero image */}
+          <div
+            className={`hidden md:block transition-all duration-1000 delay-700 ${
+              loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+            }`}
+          >
+            <div className="relative">
+              <div className="absolute -inset-4 bg-amber-500/10 rounded-3xl blur-2xl" />
+              <img
+                src="/mudanza-pereira.jpg"
+                alt="Servicio de mudanzas en Pereira - Camión y equipo profesional cargando muebles"
+                className="relative rounded-2xl shadow-2xl shadow-black/40 border border-white/10 w-full object-cover"
+                width={600}
+                height={554}
+                loading="eager"
+              />
+            </div>
           </div>
         </div>
       </div>

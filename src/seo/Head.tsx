@@ -12,46 +12,50 @@ export default function Head({ title, description, canonical, ogImage }: HeadPro
   useEffect(() => {
     document.title = title
 
-    const metas: HTMLMetaElement[] = []
-    const links: HTMLLinkElement[] = []
+    const managed: Element[] = []
 
-    const setMeta = (name: string, content: string, property = false) => {
-      const meta = document.createElement('meta')
-      if (property) {
-        meta.setAttribute('property', name)
+    const setMeta = (attr: 'name' | 'property', key: string, content: string) => {
+      // Replace existing tag if present (from prerender), otherwise create new
+      let el = document.head.querySelector(`meta[${attr}="${key}"]`) as HTMLMetaElement | null
+      if (el) {
+        el.content = content
       } else {
-        meta.setAttribute('name', name)
+        el = document.createElement('meta')
+        el.setAttribute(attr, key)
+        el.content = content
+        document.head.appendChild(el)
+        managed.push(el)
       }
-      meta.content = content
-      document.head.appendChild(meta)
-      metas.push(meta)
     }
 
     const setLink = (rel: string, href: string) => {
-      const link = document.createElement('link')
-      link.rel = rel
-      link.href = href
-      document.head.appendChild(link)
-      links.push(link)
+      let el = document.head.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null
+      if (el) {
+        el.href = href
+      } else {
+        el = document.createElement('link')
+        el.rel = rel
+        el.href = href
+        document.head.appendChild(el)
+        managed.push(el)
+      }
     }
 
-    setMeta('description', description)
+    setMeta('name', 'description', description)
     setLink('canonical', `${SITE_URL}${canonical}`)
-    setMeta('og:title', title, true)
-    setMeta('og:description', description, true)
-    setMeta('og:url', `${SITE_URL}${canonical}`, true)
-    setMeta('og:type', 'website', true)
-    setMeta('og:site_name', 'Mudanzas Pereira', true)
-    if (ogImage) {
-      setMeta('og:image', ogImage, true)
-    }
-    setMeta('twitter:card', 'summary')
-    setMeta('twitter:title', title)
-    setMeta('twitter:description', description)
+    setMeta('property', 'og:title', title)
+    setMeta('property', 'og:description', description)
+    setMeta('property', 'og:url', `${SITE_URL}${canonical}`)
+    setMeta('property', 'og:type', 'website')
+    setMeta('property', 'og:site_name', 'Mudanzas Pereira')
+    setMeta('property', 'og:image', ogImage || `${SITE_URL}/mudanza-pereira.jpg`)
+    setMeta('name', 'twitter:card', 'summary_large_image')
+    setMeta('name', 'twitter:title', title)
+    setMeta('name', 'twitter:description', description)
+    setMeta('name', 'twitter:image', ogImage || `${SITE_URL}/mudanza-pereira.jpg`)
 
     return () => {
-      metas.forEach((m) => m.remove())
-      links.forEach((l) => l.remove())
+      managed.forEach((el) => el.remove())
     }
   }, [title, description, canonical, ogImage])
 
