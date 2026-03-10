@@ -38,7 +38,7 @@ export default function TrustBadges() {
   const { ref, isVisible } = useInView(0.3)
 
   return (
-    <section ref={ref} className="relative -mt-12 z-10 pb-16 pt-4 bg-cream-50">
+    <section ref={ref} className="relative z-10 pb-12 pt-6 bg-cream-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className={`grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 stagger`}>
           {stats.map((stat, i) => (

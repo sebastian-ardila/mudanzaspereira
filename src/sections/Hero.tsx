@@ -115,8 +115,13 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Bottom fade - extended for smooth transition */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-linear-to-t from-cream-50 via-cream-50/60 to-transparent" />
+      {/* Bottom fade - multi-stop dark-to-cream transition */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-52"
+        style={{
+          background: 'linear-gradient(to top, #fefdfb 0%, #fefdfb 10%, rgba(254,253,251,0.7) 35%, rgba(26,26,46,0.3) 70%, transparent 100%)',
+        }}
+      />
     </section>
   )
 }

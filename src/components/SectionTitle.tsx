@@ -12,7 +12,7 @@ export default function SectionTitle({ title, subtitle, centered = true, light =
   const { ref, isVisible } = useInView(0.3)
 
   return (
-    <div ref={ref} className={`mb-14 ${centered ? 'text-center' : ''}`}>
+    <div ref={ref} className={`mb-10 ${centered ? 'text-center' : ''}`}>
       {tag && (
         <span className={`inline-block text-sm font-semibold tracking-widest uppercase mb-3 fade-up ${isVisible ? 'visible' : ''} ${light ? 'text-amber-400' : 'text-amber-600'}`}>
           {tag}
