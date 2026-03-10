@@ -115,8 +115,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-cream-50 to-transparent" />
+      {/* Bottom fade - extended for smooth transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-linear-to-t from-cream-50 via-cream-50/60 to-transparent" />
     </section>
   )
 }

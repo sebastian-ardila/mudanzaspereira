@@ -54,9 +54,9 @@ export default function Benefits() {
           {benefits.map((benefit) => (
             <div
               key={benefit.title}
-              className={`fade-up ${isVisible ? 'visible' : ''} flex items-start gap-4 bg-white rounded-2xl border border-warm-200/60 p-6 hover-lift`}
+              className={`fade-left ${isVisible ? 'visible' : ''} group flex items-start gap-4 bg-white rounded-2xl border border-warm-200/60 p-6 hover-lift`}
             >
-              <div className="w-10 h-10 rounded-xl bg-dark-900 text-amber-400 flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-dark-900 text-amber-400 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                 {benefit.icon}
               </div>
               <div>

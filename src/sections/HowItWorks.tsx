@@ -22,13 +22,13 @@ export default function HowItWorks() {
           {steps.map((step, i) => (
             <div
               key={step.num}
-              className={`fade-up ${isVisible ? 'visible' : ''} relative`}
+              className={`fade-up ${isVisible ? 'visible' : ''} relative group`}
             >
               {i < steps.length - 1 && (
                 <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-px bg-warm-200" />
               )}
               <div className="relative">
-                <span className="font-display text-6xl font-extrabold text-warm-100">{step.num}</span>
+                <span className="font-display text-6xl font-extrabold text-warm-100 group-hover:text-amber-500/20 transition-colors duration-500">{step.num}</span>
                 <h3 className="font-display text-lg font-bold text-dark-900 -mt-3 mb-2">{step.title}</h3>
                 <p className="text-sm text-warm-500 leading-relaxed">{step.description}</p>
               </div>

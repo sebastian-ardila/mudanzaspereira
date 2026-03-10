@@ -50,8 +50,8 @@ export default function QuoteForm() {
           subtitle="Completa el formulario y te respondemos por WhatsApp"
         />
 
-        <div className={`fade-up ${isVisible ? 'visible' : ''}`}>
-          <form onSubmit={handleSubmit} className="bg-cream-50 rounded-2xl border border-warm-200/60 p-7 md:p-9 space-y-5">
+        <div className={`scale-in ${isVisible ? 'visible' : ''}`}>
+          <form onSubmit={handleSubmit} className="bg-cream-50 rounded-2xl border border-warm-200/60 p-7 md:p-9 space-y-5 shadow-lg shadow-warm-200/20">
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
                 <label htmlFor="nombre" className="block text-sm font-medium text-warm-700 mb-1.5">Nombre *</label>

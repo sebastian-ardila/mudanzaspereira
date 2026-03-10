@@ -36,7 +36,7 @@ export default function Testimonials() {
           {testimonials.map((t) => (
             <div
               key={t.name}
-              className={`fade-up ${isVisible ? 'visible' : ''} bg-cream-50 rounded-2xl p-7 border border-warm-200/40`}
+              className={`scale-in ${isVisible ? 'visible' : ''} bg-cream-50 rounded-2xl p-7 border border-warm-200/40 hover-lift`}
             >
               {/* Stars */}
               <div className="flex gap-1 mb-4">

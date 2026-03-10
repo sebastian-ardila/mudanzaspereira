@@ -26,7 +26,7 @@ export default function Coverage() {
           {cities.map((city) => (
             <div
               key={city.slug}
-              className={`fade-up ${isVisible ? 'visible' : ''} bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-7`}
+              className={`scale-in ${isVisible ? 'visible' : ''} bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-7 hover:bg-white/8 transition-colors duration-300`}
             >
               <h3 className="font-display text-xl font-bold text-white mb-5">
                 <Link to={city.page} className="hover:text-amber-400 transition-colors">

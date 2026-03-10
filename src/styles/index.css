@@ -54,8 +54,8 @@ body {
 .fade-up {
   opacity: 0;
   transform: translateY(32px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-up.visible {
@@ -63,13 +63,70 @@ body {
   transform: translateY(0);
 }
 
+/* Fade in from left */
+.fade-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Fade in from right */
+.fade-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scale up entrance */
+.scale-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
 /* Stagger children */
-.stagger > .fade-up:nth-child(1) { transition-delay: 0ms; }
-.stagger > .fade-up:nth-child(2) { transition-delay: 80ms; }
-.stagger > .fade-up:nth-child(3) { transition-delay: 160ms; }
-.stagger > .fade-up:nth-child(4) { transition-delay: 240ms; }
-.stagger > .fade-up:nth-child(5) { transition-delay: 320ms; }
-.stagger > .fade-up:nth-child(6) { transition-delay: 400ms; }
+.stagger > .fade-up:nth-child(1),
+.stagger > .fade-left:nth-child(1),
+.stagger > .fade-right:nth-child(1),
+.stagger > .scale-in:nth-child(1) { transition-delay: 0ms; }
+.stagger > .fade-up:nth-child(2),
+.stagger > .fade-left:nth-child(2),
+.stagger > .fade-right:nth-child(2),
+.stagger > .scale-in:nth-child(2) { transition-delay: 100ms; }
+.stagger > .fade-up:nth-child(3),
+.stagger > .fade-left:nth-child(3),
+.stagger > .fade-right:nth-child(3),
+.stagger > .scale-in:nth-child(3) { transition-delay: 200ms; }
+.stagger > .fade-up:nth-child(4),
+.stagger > .fade-left:nth-child(4),
+.stagger > .fade-right:nth-child(4),
+.stagger > .scale-in:nth-child(4) { transition-delay: 300ms; }
+.stagger > .fade-up:nth-child(5),
+.stagger > .fade-left:nth-child(5),
+.stagger > .fade-right:nth-child(5),
+.stagger > .scale-in:nth-child(5) { transition-delay: 400ms; }
+.stagger > .fade-up:nth-child(6),
+.stagger > .fade-left:nth-child(6),
+.stagger > .fade-right:nth-child(6),
+.stagger > .scale-in:nth-child(6) { transition-delay: 500ms; }
 
 /* Hero gradient animation */
 @keyframes gradientShift {
