@@ -6,11 +6,15 @@ import FAQ from '../components/FAQ'
 const faqItems = [
   {
     q: '¿Cuánto cuesta una mudanza en Pereira?',
-    a: 'El costo de una mudanza o trasteo varía según la cantidad de carga, la distancia y los servicios adicionales. Contáctanos por WhatsApp para una cotización personalizada y sin compromiso.',
+    a: 'Depende de la cantidad de carga, la distancia y si necesitas servicios adicionales como embalaje. Escríbenos por WhatsApp con los detalles y te cotizamos en minutos, sin compromiso.',
+  },
+  {
+    q: '¿Ustedes hacen la mudanza directamente?',
+    a: 'Coordinamos tu mudanza con operadores aliados verificados en Pereira y Dosquebradas. Nos encargamos de asignar el equipo y vehículo adecuado para tu servicio.',
   },
   {
     q: '¿Hacen trasteos y acarreos en Dosquebradas?',
-    a: 'Sí, hacemos mudanzas, trasteos y acarreos en Pereira, Dosquebradas y todos los barrios del área metropolitana.',
+    a: 'Sí, cubrimos Pereira, Dosquebradas y todos los barrios del área metropolitana para mudanzas, trasteos y acarreos.',
   },
   {
     q: '¿Cuál es la diferencia entre mudanza, trasteo y acarreo?',
@@ -18,15 +22,11 @@ const faqItems = [
   },
   {
     q: '¿Hacen acarreos pequeños?',
-    a: 'Sí, realizamos acarreos de todos los tamaños: desde mover un solo mueble o electrodoméstico hasta trasteos de casas y oficinas completas.',
+    a: 'Sí, coordinamos acarreos de todos los tamaños: desde mover un solo mueble o electrodoméstico hasta trasteos completos de casas y oficinas.',
   },
   {
-    q: '¿Qué incluye el servicio de mudanza?',
-    a: 'Personal de carga y descarga, transporte en vehículo adecuado y cuidado de tus pertenencias. Servicios adicionales de embalaje disponibles.',
-  },
-  {
-    q: '¿Cómo puedo agendar mi trasteo?',
-    a: 'Escríbenos por WhatsApp con los detalles de tu mudanza o acarreo (origen, destino, qué vas a mover) y te damos una cotización rápida. Agendamos la fecha que prefieras.',
+    q: '¿Cómo puedo agendar mi mudanza?',
+    a: 'Escríbenos por WhatsApp con los detalles (origen, destino, qué vas a mover) y te damos una cotización rápida. Una vez confirmes, coordinamos el equipo para la fecha que prefieras.',
   },
 ]
 

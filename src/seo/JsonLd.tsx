@@ -8,7 +8,7 @@ export default function JsonLd() {
     '@type': 'MovingCompany',
     name: 'Mudanzas Pereira',
     description:
-      'Servicio profesional de mudanzas en Pereira y Dosquebradas. Mudanzas residenciales, empresariales, acarreos, trasteos y transporte de muebles. Atención 24 horas por WhatsApp.',
+      'Coordinamos mudanzas, trasteos y acarreos en Pereira y Dosquebradas con operadores verificados. Mudanzas residenciales, empresariales y transporte de muebles. Atención 24 horas por WhatsApp.',
     url: SITE_URL,
     telephone: phone,
     image: `${SITE_URL}/mudanzas-pereira.png`,
@@ -53,35 +53,6 @@ export default function JsonLd() {
       availableLanguage: 'Spanish',
       areaServed: 'CO',
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '47',
-      bestRating: '5',
-    },
-    review: [
-      {
-        '@type': 'Review',
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-        author: { '@type': 'Person', name: 'Carolina M.' },
-        reviewBody:
-          'Llegaron puntuales y cuidaron todos mis muebles. La mudanza de mi apartamento en Pinares fue rápida y sin problemas.',
-      },
-      {
-        '@type': 'Review',
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-        author: { '@type': 'Person', name: 'Andrés R.' },
-        reviewBody:
-          'Me ayudaron con el trasteo de mi oficina en el Centro y todo quedó en perfecto estado. Totalmente recomendados.',
-      },
-      {
-        '@type': 'Review',
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-        author: { '@type': 'Person', name: 'Luisa F.' },
-        reviewBody:
-          'Los contacté por WhatsApp y en menos de una hora ya tenía la cotización. El precio fue justo y mi mudanza salió perfecta.',
-      },
-    ],
   }
 
   return (

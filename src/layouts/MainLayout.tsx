@@ -154,7 +154,7 @@ function Footer() {
           <div>
             <h3 className="font-display text-white text-2xl font-bold mb-4">{SITE_NAME}</h3>
             <p className="text-warm-400 text-sm leading-relaxed mb-6">
-              Servicio profesional de mudanzas, trasteos y acarreos en Pereira y Dosquebradas. Atención las 24 horas por WhatsApp.
+              Coordinamos mudanzas, trasteos y acarreos en Pereira y Dosquebradas con operadores verificados. Atención 24 horas por WhatsApp.
             </p>
             <div className="flex gap-3">
               <a

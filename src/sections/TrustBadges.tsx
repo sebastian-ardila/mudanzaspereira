@@ -3,9 +3,9 @@ import { useInView } from '../hooks/useInView'
 
 const stats = [
   { value: 500, suffix: '+', label: 'Barrios cubiertos' },
-  { value: 24, suffix: 'h', label: 'Atención WhatsApp' },
-  { value: 15, suffix: 'min', label: 'Tiempo de respuesta' },
-  { value: 100, suffix: '%', label: 'Compromiso' },
+  { value: 24, suffix: '/7', label: 'Atención WhatsApp' },
+  { value: 15, suffix: 'min', label: 'Tiempo de cotización' },
+  { value: 2, suffix: '', label: 'Ciudades: Pereira y Dosquebradas' },
 ]
 
 function AnimatedCounter({ target, suffix, animate }: { target: number; suffix: string; animate: boolean }) {

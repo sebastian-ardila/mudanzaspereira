@@ -8,8 +8,8 @@ interface CTABannerProps {
 }
 
 export default function CTABanner({
-  title = '¿Listo para tu mudanza?',
-  subtitle = 'Cotiza ahora sin compromiso. Te respondemos en minutos.',
+  title = '¿Listo para coordinar tu mudanza?',
+  subtitle = 'Escríbenos por WhatsApp y te cotizamos en minutos. Sin compromiso.',
 }: CTABannerProps) {
   const { ref, isVisible } = useInView()
 
