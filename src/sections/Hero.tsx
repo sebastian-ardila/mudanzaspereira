@@ -44,7 +44,7 @@ export default function Hero() {
               loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            Mudanzas en
+            Mudanzas y Trasteos en
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-500 to-amber-300">
               Pereira
@@ -103,17 +103,14 @@ export default function Hero() {
               loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
             }`}
           >
-            <div className="relative">
-              <div className="absolute -inset-4 bg-amber-500/10 rounded-3xl blur-2xl" />
-              <img
-                src="/mudanza-pereira.jpg"
-                alt="Servicio de mudanzas en Pereira - Camión y equipo profesional cargando muebles"
-                className="relative rounded-2xl shadow-2xl shadow-black/40 border border-white/10 w-full object-cover"
-                width={600}
-                height={554}
-                loading="eager"
-              />
-            </div>
+            <img
+              src="/mudanzas-pereira.png"
+              alt="Camión de mudanzas y trasteos en Pereira con cajas y muebles listos para acarreo"
+              className="w-full object-contain drop-shadow-2xl"
+              width={600}
+              height={600}
+              loading="eager"
+            />
           </div>
         </div>
       </div>

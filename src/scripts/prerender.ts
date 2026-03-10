@@ -22,20 +22,21 @@ function getAllPages(): PageData[] {
   // Home
   pages.push({
     path: '/',
-    title: 'Mudanzas en Pereira y Dosquebradas | Servicio Profesional de Mudanzas',
-    description: 'Servicio profesional de mudanzas en Pereira y Dosquebradas. Mudanzas residenciales, acarreos, trasteos y transporte de muebles. Cotización gratis por WhatsApp. Atención 24 horas.',
-    h1: 'Mudanzas en Pereira y Dosquebradas',
-    content: 'Servicio profesional de mudanzas, trasteos y acarreos en Pereira y Dosquebradas. Cotización rápida por WhatsApp. Atención las 24 horas. Mudanzas residenciales, mudanzas de apartamentos, mudanzas empresariales, acarreos, transporte de muebles, carga y descarga.',
+    title: 'Mudanzas y Trasteos en Pereira y Dosquebradas | Acarreos Profesionales',
+    description: 'Servicio profesional de mudanzas, trasteos y acarreos en Pereira y Dosquebradas. Mudanzas residenciales, empresariales, transporte de muebles. Cotización gratis por WhatsApp. Atención 24 horas.',
+    h1: 'Mudanzas y Trasteos en Pereira y Dosquebradas',
+    content: 'Servicio profesional de mudanzas, trasteos y acarreos en Pereira y Dosquebradas. Cotización rápida por WhatsApp. Atención las 24 horas. Mudanzas residenciales, trasteos de apartamentos, mudanzas empresariales, acarreos, transporte de muebles, carga y descarga.',
     canonical: '/',
   })
 
   // Service pages
   const servicePages = [
-    { path: '/mudanzas-economicas-pereira', title: 'Mudanzas Económicas en Pereira | Precios Justos', h1: 'Mudanzas Económicas en Pereira', desc: 'Mudanzas económicas en Pereira. Servicio profesional a precios accesibles. Cotización gratis por WhatsApp.' },
-    { path: '/mudanzas-pequenas-pereira', title: 'Mudanzas Pequeñas en Pereira | Servicio Rápido', h1: 'Mudanzas Pequeñas en Pereira', desc: 'Servicio de mudanzas pequeñas en Pereira. Ideal para mover pocos muebles o electrodomésticos.' },
-    { path: '/mudanzas-empresariales-pereira', title: 'Mudanzas Empresariales en Pereira | Oficinas y Locales', h1: 'Mudanzas Empresariales en Pereira', desc: 'Mudanzas empresariales en Pereira. Trasladamos oficinas y locales comerciales.' },
-    { path: '/acarreos-pereira', title: 'Acarreos en Pereira | Transporte de Carga', h1: 'Acarreos en Pereira', desc: 'Servicio de acarreos en Pereira y Dosquebradas. Transporte de objetos individuales y cargas puntuales.' },
-    { path: '/transporte-muebles-pereira', title: 'Transporte de Muebles en Pereira | Servicio Profesional', h1: 'Transporte de Muebles en Pereira', desc: 'Transporte de muebles en Pereira. Movemos sofás, camas, escritorios, neveras y más.' },
+    { path: '/mudanzas-economicas-pereira', title: 'Mudanzas Económicas en Pereira | Trasteos Baratos', h1: 'Mudanzas Económicas en Pereira', desc: 'Mudanzas y trasteos económicos en Pereira. Acarreos a precios accesibles. Cotización gratis por WhatsApp.' },
+    { path: '/mudanzas-pequenas-pereira', title: 'Mudanzas Pequeñas y Acarreos en Pereira | Servicio Rápido', h1: 'Mudanzas Pequeñas en Pereira', desc: 'Mudanzas pequeñas y acarreos en Pereira. Ideal para mover pocos muebles o electrodomésticos. Trasteos rápidos.' },
+    { path: '/mudanzas-empresariales-pereira', title: 'Mudanzas Empresariales en Pereira | Trasteos de Oficinas', h1: 'Mudanzas Empresariales en Pereira', desc: 'Mudanzas y trasteos empresariales en Pereira. Trasladamos oficinas y locales. Acarreos de equipos.' },
+    { path: '/acarreos-pereira', title: 'Acarreos en Pereira | Trasteos y Transporte de Carga', h1: 'Acarreos en Pereira', desc: 'Servicio de acarreos y trasteos en Pereira y Dosquebradas. Transporte de objetos individuales y cargas puntuales.' },
+    { path: '/trasteos-pereira', title: 'Trasteos en Pereira | Servicio Profesional de Trasteos', h1: 'Trasteos en Pereira', desc: 'Servicio de trasteos en Pereira y Dosquebradas. Trasteos residenciales, empresariales y acarreos. Cotización gratis por WhatsApp.' },
+    { path: '/transporte-muebles-pereira', title: 'Transporte de Muebles en Pereira | Acarreos Profesionales', h1: 'Transporte de Muebles en Pereira', desc: 'Transporte de muebles y acarreos en Pereira. Movemos sofás, camas, escritorios, neveras y más.' },
   ]
   for (const sp of servicePages) {
     pages.push({ path: sp.path, title: sp.title, description: sp.desc, h1: sp.h1, content: sp.desc, canonical: sp.path })
@@ -43,10 +44,10 @@ function getAllPages(): PageData[] {
 
   // Info pages
   const infoPages = [
-    { path: '/precio-mudanza-pereira', title: 'Precio de Mudanza en Pereira | ¿Cuánto Cuesta?', h1: 'Precio de Mudanza en Pereira', desc: 'Conoce los precios de mudanzas en Pereira. Rangos de precio y cómo obtener la mejor cotización.' },
-    { path: '/cuanto-cuesta-una-mudanza-en-pereira', title: '¿Cuánto Cuesta una Mudanza en Pereira? | Guía de Precios', h1: '¿Cuánto Cuesta una Mudanza en Pereira?', desc: 'Descubre cuánto cuesta una mudanza en Pereira. Guía completa de precios.' },
-    { path: '/como-preparar-una-mudanza', title: 'Cómo Preparar una Mudanza | Guía Práctica', h1: 'Cómo Preparar una Mudanza', desc: 'Guía práctica para preparar tu mudanza en Pereira.' },
-    { path: '/empresa-de-mudanzas-en-pereira', title: 'Empresa de Mudanzas en Pereira | Servicio Profesional', h1: 'Empresa de Mudanzas en Pereira', desc: 'Empresa de mudanzas en Pereira con cobertura en Pereira y Dosquebradas.' },
+    { path: '/precio-mudanza-pereira', title: 'Precio de Mudanza y Trasteo en Pereira | ¿Cuánto Cuesta?', h1: 'Precio de Mudanza en Pereira', desc: 'Precios de mudanzas, trasteos y acarreos en Pereira. Rangos de precio y cómo obtener la mejor cotización.' },
+    { path: '/cuanto-cuesta-una-mudanza-en-pereira', title: '¿Cuánto Cuesta una Mudanza en Pereira? | Guía de Precios', h1: '¿Cuánto Cuesta una Mudanza en Pereira?', desc: 'Cuánto cuesta una mudanza o trasteo en Pereira. Guía completa de precios para mudanzas y acarreos.' },
+    { path: '/como-preparar-una-mudanza', title: 'Cómo Preparar una Mudanza o Trasteo | Guía Práctica', h1: 'Cómo Preparar una Mudanza', desc: 'Guía práctica para preparar tu mudanza o trasteo en Pereira. Consejos para un traslado sin estrés.' },
+    { path: '/empresa-de-mudanzas-en-pereira', title: 'Empresa de Mudanzas y Trasteos en Pereira | Servicio Profesional', h1: 'Empresa de Mudanzas en Pereira', desc: 'Empresa de mudanzas, trasteos y acarreos en Pereira y Dosquebradas. Servicio profesional 24 horas.' },
   ]
   for (const ip of infoPages) {
     pages.push({ path: ip.path, title: ip.title, description: ip.desc, h1: ip.h1, content: ip.desc, canonical: ip.path })
@@ -57,8 +58,8 @@ function getAllPages(): PageData[] {
     const totalZones = city.communes.reduce((sum: number, c: { zones: unknown[] }) => sum + c.zones.length, 0)
     pages.push({
       path: city.page,
-      title: `Mudanzas en ${city.name} | Cotización Gratis por WhatsApp`,
-      description: `Servicio profesional de mudanzas en ${city.name}. Cubrimos las ${city.communes.length} comunas y más de ${totalZones} barrios. Cotización gratis.`,
+      title: `Mudanzas y Trasteos en ${city.name} | Cotización Gratis por WhatsApp`,
+      description: `Mudanzas, trasteos y acarreos en ${city.name}. Cubrimos las ${city.communes.length} comunas y más de ${totalZones} barrios. Cotización gratis.`,
       h1: `Mudanzas en ${city.name}`,
       content: `Servicio completo de mudanzas en ${city.name}. Cubrimos las ${city.communes.length} comunas y más de ${totalZones} barrios y sectores. Mudanzas residenciales, empresariales, acarreos, trasteos y transporte de muebles. Comunas: ${city.communes.map((c: { name: string }) => c.name).join(', ')}.`,
       canonical: city.page,
@@ -69,10 +70,10 @@ function getAllPages(): PageData[] {
       const zoneNames = commune.zones.map((z: { name: string }) => z.name).join(', ')
       pages.push({
         path: commune.page,
-        title: `Mudanzas en ${commune.name}, ${city.name} | Servicio Profesional`,
-        description: `Servicio de mudanzas en ${commune.name}, ${city.name}. Cubrimos todos los barrios de la comuna. Cotización por WhatsApp.`,
+        title: `Mudanzas y Trasteos en ${commune.name}, ${city.name} | Servicio Profesional`,
+        description: `Mudanzas, trasteos y acarreos en ${commune.name}, ${city.name}. Cubrimos todos los barrios de la comuna. Cotización por WhatsApp.`,
         h1: `Mudanzas en ${commune.name}, ${city.name}`,
-        content: `Servicio profesional de mudanzas en la comuna ${commune.name} de ${city.name}. Barrios: ${zoneNames}.`,
+        content: `Servicio profesional de mudanzas, trasteos y acarreos en la comuna ${commune.name} de ${city.name}. Barrios: ${zoneNames}.`,
         canonical: commune.page,
       })
 
@@ -123,11 +124,11 @@ function renderPage(page: PageData): string {
     <meta property="og:url" content="${SITE_URL}${page.canonical}" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Mudanzas Pereira" />
-    <meta property="og:image" content="${SITE_URL}/mudanza-pereira.jpg" />
+    <meta property="og:image" content="${SITE_URL}/mudanzas-pereira.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeHtml(page.title)}" />
     <meta name="twitter:description" content="${escapeHtml(page.description)}" />
-    <meta name="twitter:image" content="${SITE_URL}/mudanza-pereira.jpg" />`
+    <meta name="twitter:image" content="${SITE_URL}/mudanzas-pereira.png" />`
 
   html = html.replace('</head>', `${headTags}\n  </head>`)
 

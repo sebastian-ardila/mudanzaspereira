@@ -154,7 +154,7 @@ function Footer() {
           <div>
             <h3 className="font-display text-white text-2xl font-bold mb-4">{SITE_NAME}</h3>
             <p className="text-warm-400 text-sm leading-relaxed mb-6">
-              Servicio profesional de mudanzas en Pereira y Dosquebradas. Atención las 24 horas por WhatsApp.
+              Servicio profesional de mudanzas, trasteos y acarreos en Pereira y Dosquebradas. Atención las 24 horas por WhatsApp.
             </p>
             <div className="flex gap-3">
               <a
@@ -203,6 +203,7 @@ function Footer() {
               <li><Link to="/mudanzas-pereira" className="hover:text-white transition-colors">Mudanzas Pereira</Link></li>
               <li><Link to="/mudanzas-dosquebradas" className="hover:text-white transition-colors">Mudanzas Dosquebradas</Link></li>
               <li><Link to="/mudanzas-economicas-pereira" className="hover:text-white transition-colors">Mudanzas Económicas</Link></li>
+              <li><Link to="/trasteos-pereira" className="hover:text-white transition-colors">Trasteos</Link></li>
               <li><Link to="/acarreos-pereira" className="hover:text-white transition-colors">Acarreos</Link></li>
               <li><Link to="/precio-mudanza-pereira" className="hover:text-white transition-colors">Precios</Link></li>
             </ul>

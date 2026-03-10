@@ -16,8 +16,8 @@ export default function HomePage() {
   return (
     <>
       <Head
-        title="Mudanzas en Pereira y Dosquebradas | Servicio Profesional de Mudanzas"
-        description="Servicio profesional de mudanzas en Pereira y Dosquebradas. Mudanzas residenciales, acarreos, trasteos y transporte de muebles. Cotización gratis por WhatsApp. Atención 24 horas."
+        title="Mudanzas y Trasteos en Pereira y Dosquebradas | Acarreos Profesionales"
+        description="Servicio profesional de mudanzas, trasteos y acarreos en Pereira y Dosquebradas. Mudanzas residenciales, empresariales, transporte de muebles. Cotización gratis por WhatsApp. Atención 24 horas."
         canonical="/"
       />
       <JsonLd />

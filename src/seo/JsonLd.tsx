@@ -11,7 +11,7 @@ export default function JsonLd() {
       'Servicio profesional de mudanzas en Pereira y Dosquebradas. Mudanzas residenciales, empresariales, acarreos, trasteos y transporte de muebles. Atención 24 horas por WhatsApp.',
     url: SITE_URL,
     telephone: phone,
-    image: `${SITE_URL}/mudanza-pereira.jpg`,
+    image: `${SITE_URL}/mudanzas-pereira.png`,
     priceRange: '$$',
     currenciesAccepted: 'COP',
     paymentAccepted: 'Efectivo, Transferencia',

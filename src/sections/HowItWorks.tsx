@@ -2,10 +2,10 @@ import { useInView } from '../hooks/useInView'
 import SectionTitle from '../components/SectionTitle'
 
 const steps = [
-  { num: '01', title: 'Contáctanos', description: 'Escríbenos por WhatsApp con los detalles de tu mudanza.' },
+  { num: '01', title: 'Contáctanos', description: 'Escríbenos por WhatsApp con los detalles de tu mudanza, trasteo o acarreo.' },
   { num: '02', title: 'Cotización', description: 'Te enviamos un presupuesto justo y sin compromiso.' },
   { num: '03', title: 'Programación', description: 'Agendamos la fecha y hora que prefieras.' },
-  { num: '04', title: 'Mudanza', description: 'Nuestro equipo se encarga de todo.' },
+  { num: '04', title: 'Mudanza', description: 'Nuestro equipo se encarga de todo: carga, transporte y descarga.' },
 ]
 
 export default function HowItWorks() {

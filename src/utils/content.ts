@@ -1,12 +1,12 @@
 const intros: Record<number, (zone: string, city: string) => string> = {
   0: (zone, city) =>
-    `¿Necesitas mudarte en ${zone}, ${city}? Nuestro equipo de mudanzas ofrece un servicio profesional, puntual y cuidadoso para que tu traslado sea sin estrés. Cubrimos toda la zona con personal capacitado y vehículos adecuados.`,
+    `¿Necesitas mudarte en ${zone}, ${city}? Ofrecemos mudanzas, trasteos y acarreos con servicio profesional, puntual y cuidadoso para que tu traslado sea sin estrés. Cubrimos toda la zona con personal capacitado y vehículos adecuados.`,
   1: (zone, city) =>
-    `Realizamos mudanzas en ${zone}, ${city} con la mejor atención y precios justos. Ya sea que te mudes a un apartamento o una casa, contamos con la experiencia para manejar tus pertenencias con cuidado.`,
+    `Realizamos mudanzas y trasteos en ${zone}, ${city} con la mejor atención y precios justos. Ya sea un acarreo pequeño o el traslado completo de tu casa, contamos con la experiencia para manejar tus pertenencias con cuidado.`,
   2: (zone, city) =>
-    `Servicio de mudanzas confiable en ${zone}, ${city}. Nos encargamos de todo: embalaje, carga, transporte y descarga. Tu mudanza en buenas manos, con atención personalizada y sin contratiempos.`,
+    `Servicio de mudanzas, acarreos y trasteos en ${zone}, ${city}. Nos encargamos de todo: embalaje, carga, transporte y descarga. Tu mudanza en buenas manos, con atención personalizada y sin contratiempos.`,
   3: (zone, city) =>
-    `Si buscas una mudanza segura y económica en ${zone}, ${city}, estás en el lugar indicado. Ofrecemos cotización sin compromiso, vehículos de carga apropiados y un equipo comprometido con tu satisfacción.`,
+    `Si buscas una mudanza segura y económica en ${zone}, ${city}, estás en el lugar indicado. Hacemos mudanzas, trasteos y acarreos con cotización sin compromiso, vehículos de carga apropiados y un equipo comprometido con tu satisfacción.`,
   4: (zone, city) =>
     `Mudanzas en ${zone}, ${city}: servicio rápido, seguro y a buen precio. Nos especializamos en mudanzas locales, trasteos y acarreos con cobertura completa en toda la zona. Contáctanos por WhatsApp para tu cotización.`,
 }
@@ -69,8 +69,8 @@ export function getFaqs(zoneName: string): { q: string; a: string }[] {
 export function getMetaTitle(zoneName: string, cityName: string): string {
   const variants = [
     `Mudanzas en ${zoneName}, ${cityName} | Servicio Profesional`,
-    `Mudanzas ${zoneName} ${cityName} | Cotización Gratis`,
-    `Servicio de Mudanzas en ${zoneName}, ${cityName}`,
+    `Mudanzas y Acarreos en ${zoneName}, ${cityName} | Cotización Gratis`,
+    `Trasteos y Mudanzas en ${zoneName}, ${cityName} | 24 Horas`,
     `Mudanzas y Trasteos en ${zoneName} | ${cityName}`,
   ]
   return variants[hashString(zoneName) % variants.length]
@@ -79,8 +79,8 @@ export function getMetaTitle(zoneName: string, cityName: string): string {
 export function getMetaDescription(zoneName: string, cityName: string): string {
   const variants = [
     `Servicio de mudanzas en ${zoneName}, ${cityName}. Mudanzas residenciales, acarreos y trasteos. Cotización rápida por WhatsApp. Atención 24 horas.`,
-    `¿Buscas mudanzas en ${zoneName}, ${cityName}? Ofrecemos servicio profesional, puntual y económico. Escríbenos por WhatsApp para tu cotización sin compromiso.`,
-    `Mudanzas profesionales en ${zoneName}, ${cityName}. Transporte de muebles, acarreos y trasteos con cobertura completa. Cotiza gratis por WhatsApp.`,
+    `¿Buscas mudanzas, trasteos o acarreos en ${zoneName}, ${cityName}? Servicio profesional, puntual y económico. Cotización sin compromiso por WhatsApp.`,
+    `Mudanzas, trasteos y acarreos en ${zoneName}, ${cityName}. Transporte de muebles con cobertura completa. Cotiza gratis por WhatsApp.`,
   ]
   return variants[hashString(zoneName) % variants.length]
 }

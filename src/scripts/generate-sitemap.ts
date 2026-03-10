@@ -10,6 +10,7 @@ const staticPages = [
   '/mudanzas-pequenas-pereira',
   '/mudanzas-empresariales-pereira',
   '/acarreos-pereira',
+  '/trasteos-pereira',
   '/transporte-muebles-pereira',
   '/precio-mudanza-pereira',
   '/cuanto-cuesta-una-mudanza-en-pereira',

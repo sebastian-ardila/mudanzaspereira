@@ -48,11 +48,11 @@ export default function Head({ title, description, canonical, ogImage }: HeadPro
     setMeta('property', 'og:url', `${SITE_URL}${canonical}`)
     setMeta('property', 'og:type', 'website')
     setMeta('property', 'og:site_name', 'Mudanzas Pereira')
-    setMeta('property', 'og:image', ogImage || `${SITE_URL}/mudanza-pereira.jpg`)
+    setMeta('property', 'og:image', ogImage || `${SITE_URL}/mudanzas-pereira.png`)
     setMeta('name', 'twitter:card', 'summary_large_image')
     setMeta('name', 'twitter:title', title)
     setMeta('name', 'twitter:description', description)
-    setMeta('name', 'twitter:image', ogImage || `${SITE_URL}/mudanza-pereira.jpg`)
+    setMeta('name', 'twitter:image', ogImage || `${SITE_URL}/mudanzas-pereira.png`)
 
     return () => {
       managed.forEach((el) => el.remove())

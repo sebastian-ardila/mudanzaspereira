@@ -17,8 +17,8 @@ export default function Coverage() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
         <SectionTitle
           tag="Cobertura"
-          title="Llegamos a toda la ciudad"
-          subtitle="Pereira, Dosquebradas y todos sus barrios"
+          title="Mudanzas, Trasteos y Acarreos en toda la ciudad"
+          subtitle="Cobertura completa en Pereira, Dosquebradas y todos sus barrios"
           light
         />
 
@@ -53,7 +53,7 @@ export default function Coverage() {
 
         <div className={`text-center fade-up ${isVisible ? 'visible' : ''}`}>
           <p className="text-warm-400 mb-6 text-sm">
-            Más de 500 barrios y sectores en toda el área metropolitana
+            Mudanzas, trasteos y acarreos en más de 500 barrios del área metropolitana
           </p>
           <Button variant="whatsapp" href={getWhatsAppUrl('Hola, quiero saber si cubren mi zona para una mudanza')}>
             Consultar mi zona
