@@ -55,7 +55,7 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.title}
-              className={`scale-in ${isVisible ? 'visible' : ''} group bg-white rounded-2xl border border-warm-200/60 p-7 hover-lift cursor-default`}
+              className={`scale-in ${isVisible ? 'visible' : ''} group bg-white rounded-2xl border border-warm-200 p-7 hover-lift cursor-default shadow-sm`}
             >
               <div className="flex items-start gap-5">
                 <div className="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center shrink-0 group-hover:bg-amber-500 group-hover:text-white group-hover:rotate-6 transition-all duration-300">
@@ -63,7 +63,7 @@ export default function Services() {
                 </div>
                 <div>
                   <h3 className="font-display text-lg font-bold text-dark-900 mb-1.5 group-hover:text-amber-600 transition-colors duration-300">{service.title}</h3>
-                  <p className="text-warm-500 text-sm leading-relaxed">{service.description}</p>
+                  <p className="text-warm-600 text-sm leading-relaxed">{service.description}</p>
                 </div>
               </div>
             </div>

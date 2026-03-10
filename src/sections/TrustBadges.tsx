@@ -50,7 +50,7 @@ export default function TrustBadges() {
               <div className="font-display text-4xl md:text-5xl font-extrabold text-dark-900 mb-1">
                 <AnimatedCounter target={stat.value} suffix={stat.suffix} animate={isVisible} />
               </div>
-              <div className="text-sm text-warm-500 font-medium">{stat.label}</div>
+              <div className="text-sm text-warm-600 font-medium">{stat.label}</div>
             </div>
           ))}
         </div>

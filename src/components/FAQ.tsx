@@ -15,7 +15,7 @@ export default function FAQ({ items }: FAQProps) {
           <div
             key={i}
             className={`rounded-2xl border transition-all duration-300 ${
-              isOpen ? 'border-amber-500/30 bg-amber-500/5' : 'border-warm-200/60 bg-white'
+              isOpen ? 'border-amber-500/30 bg-amber-500/5' : 'border-warm-200 bg-white'
             }`}
           >
             <button
@@ -42,7 +42,7 @@ export default function FAQ({ items }: FAQProps) {
                 isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
               }`}
             >
-              <div className="px-6 pb-5 text-warm-500 leading-relaxed">{item.a}</div>
+              <div className="px-6 pb-5 text-warm-600 leading-relaxed">{item.a}</div>
             </div>
           </div>
         )

@@ -19,20 +19,17 @@ export default function HowItWorks() {
           title="Así de fácil es mudarte con nosotros"
           subtitle="Nos encargamos de coordinar todo para que tu mudanza sea simple"
         />
-        <div className={`grid gap-6 md:grid-cols-4 stagger`}>
+        <div className={`grid gap-6 sm:grid-cols-2 md:grid-cols-4 stagger`}>
           {steps.map((step, i) => (
             <div
               key={step.num}
-              className={`fade-up ${isVisible ? 'visible' : ''} relative group`}
+              className={`fade-up ${isVisible ? 'visible' : ''} group bg-cream-50 rounded-2xl border border-warm-200 p-6 text-center`}
             >
-              {i < steps.length - 1 && (
-                <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-px bg-warm-200" />
-              )}
-              <div className="relative">
-                <span className="font-display text-6xl font-extrabold text-warm-100 group-hover:text-amber-500/20 transition-colors duration-500">{step.num}</span>
-                <h3 className="font-display text-lg font-bold text-dark-900 -mt-3 mb-2">{step.title}</h3>
-                <p className="text-sm text-warm-500 leading-relaxed">{step.description}</p>
+              <div className="w-12 h-12 rounded-full bg-amber-500/10 text-amber-600 font-display text-lg font-bold flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
+                {step.num}
               </div>
+              <h3 className="font-display text-lg font-bold text-dark-900 mb-2">{step.title}</h3>
+              <p className="text-sm text-warm-600 leading-relaxed">{step.description}</p>
             </div>
           ))}
         </div>

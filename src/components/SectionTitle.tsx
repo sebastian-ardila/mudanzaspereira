@@ -22,7 +22,7 @@ export default function SectionTitle({ title, subtitle, centered = true, light =
         {title}
       </h2>
       {subtitle && (
-        <p className={`mt-4 text-lg max-w-2xl fade-up ${isVisible ? 'visible' : ''} ${centered ? 'mx-auto' : ''} ${light ? 'text-warm-300' : 'text-warm-500'}`} style={{ transitionDelay: '200ms' }}>
+        <p className={`mt-4 text-lg max-w-2xl fade-up ${isVisible ? 'visible' : ''} ${centered ? 'mx-auto' : ''} ${light ? 'text-warm-300' : 'text-warm-600'}`} style={{ transitionDelay: '200ms' }}>
           {subtitle}
         </p>
       )}
