@@ -118,6 +118,15 @@ function Header() {
           >
             Cobertura
           </button>
+          <button
+            type="button"
+            onClick={() => scrollToSection('#cotizacion')}
+            className={`text-sm font-medium transition-colors duration-300 cursor-pointer ${
+              solid ? 'text-warm-600 hover:text-dark-900' : 'text-white/80 hover:text-white'
+            }`}
+          >
+            Cotización
+          </button>
           <a
             href={getWhatsAppUrl('Hola, necesito información sobre mudanzas')}
             className="inline-flex items-center gap-2 bg-wa-500 hover:bg-wa-600 text-white px-5 py-2.5 rounded-xl font-semibold transition-all duration-300 text-sm hover:scale-105"
@@ -176,6 +185,15 @@ function Header() {
             }`}
           >
             Cobertura
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToSection('#cotizacion')}
+            className={`py-3 font-medium transition-colors text-left cursor-pointer ${
+              solid ? 'text-warm-700 hover:text-dark-900' : 'text-white/80 hover:text-white'
+            }`}
+          >
+            Cotización
           </button>
           <a
             href={getWhatsAppUrl('Hola, necesito información sobre mudanzas')}

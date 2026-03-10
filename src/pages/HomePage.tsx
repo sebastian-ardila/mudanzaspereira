@@ -8,6 +8,7 @@ import Services from '../sections/Services'
 import Coverage from '../sections/Coverage'
 import Benefits from '../sections/Benefits'
 import HomeFAQ from '../sections/HomeFAQ'
+import QuoteForm from '../sections/QuoteForm'
 import CTABanner from '../components/CTABanner'
 
 export default function HomePage() {
@@ -26,6 +27,7 @@ export default function HomePage() {
         <Services />
         <Benefits />
         <Coverage />
+        <QuoteForm />
         <HomeFAQ />
         <CTABanner />
       </MainLayout>
