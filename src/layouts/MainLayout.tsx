@@ -200,9 +200,10 @@ function Footer() {
             <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Enlaces</h4>
             <ul className="space-y-3 text-sm">
               <li><Link to="/" className="hover:text-white transition-colors">Inicio</Link></li>
+              <li><Link to="/mudanzas-residenciales" className="hover:text-white transition-colors">Mudanzas Residenciales</Link></li>
+              <li><Link to="/mudanzas-empresariales" className="hover:text-white transition-colors">Mudanzas Empresariales</Link></li>
               <li><Link to="/mudanzas-pereira" className="hover:text-white transition-colors">Mudanzas Pereira</Link></li>
               <li><Link to="/mudanzas-dosquebradas" className="hover:text-white transition-colors">Mudanzas Dosquebradas</Link></li>
-              <li><Link to="/mudanzas-economicas-pereira" className="hover:text-white transition-colors">Mudanzas Económicas</Link></li>
               <li><Link to="/trasteos-pereira" className="hover:text-white transition-colors">Trasteos</Link></li>
               <li><Link to="/acarreos-pereira" className="hover:text-white transition-colors">Acarreos</Link></li>
               <li><Link to="/precio-mudanza-pereira" className="hover:text-white transition-colors">Precios</Link></li>

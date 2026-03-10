@@ -6,6 +6,8 @@ const SITE_URL = 'https://mudanzaspereira.co'
 
 const staticPages = [
   '/',
+  '/mudanzas-residenciales',
+  '/mudanzas-empresariales',
   '/mudanzas-economicas-pereira',
   '/mudanzas-pequenas-pereira',
   '/mudanzas-empresariales-pereira',
