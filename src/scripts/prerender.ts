@@ -23,9 +23,9 @@ function getAllPages(): PageData[] {
   pages.push({
     path: '/',
     title: 'Mudanzas y Trasteos en Pereira y Dosquebradas | Acarreos Profesionales',
-    description: 'Servicio profesional de mudanzas, trasteos y acarreos en Pereira y Dosquebradas. Mudanzas residenciales, empresariales, transporte de muebles. Cotización gratis por WhatsApp. Atención 24 horas.',
+    description: 'Coordinamos tu mudanza, trasteo o acarreo en Pereira y Dosquebradas con operadores verificados. Cotización gratis por WhatsApp. Atención 24 horas.',
     h1: 'Mudanzas y Trasteos en Pereira y Dosquebradas',
-    content: 'Servicio profesional de mudanzas, trasteos y acarreos en Pereira y Dosquebradas. Cotización rápida por WhatsApp. Atención las 24 horas. Mudanzas residenciales, trasteos de apartamentos, mudanzas empresariales, acarreos, transporte de muebles, carga y descarga.',
+    content: 'Coordinamos mudanzas, trasteos y acarreos en Pereira y Dosquebradas con operadores verificados. Cotización rápida por WhatsApp. Atención las 24 horas. Mudanzas residenciales, trasteos de apartamentos, mudanzas empresariales, acarreos, transporte de muebles, carga y descarga.',
     canonical: '/',
   })
 
@@ -100,7 +100,7 @@ function escapeHtml(str: string): string {
 
 function renderPage(page: PageData): string {
   // SEO content block that crawlers can read without JS
-  const seoBlock = `<div id="seo-content" style="display:none" aria-hidden="true"><h1>${escapeHtml(page.h1)}</h1><p>${escapeHtml(page.content)}</p></div>`
+  const seoBlock = `<div id="seo-content" style="position:absolute;left:-9999px;overflow:hidden;width:1px;height:1px"><h1>${escapeHtml(page.h1)}</h1><p>${escapeHtml(page.content)}</p></div>`
 
   let html = template
 

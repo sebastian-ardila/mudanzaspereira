@@ -44,9 +44,8 @@ export default function Hero() {
               loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            Mudanzas
-            <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-400 via-amber-500 to-amber-300">
+            Mudanzas{' '}
+            <span className="block text-transparent bg-clip-text bg-linear-to-r from-amber-400 via-amber-500 to-amber-300">
               Pereira
             </span>
           </h1>
