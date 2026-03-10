@@ -20,7 +20,7 @@ export default function HowItWorks() {
           subtitle="Nos encargamos de coordinar todo para que tu mudanza sea simple"
         />
         <div className={`grid gap-6 sm:grid-cols-2 md:grid-cols-4 stagger`}>
-          {steps.map((step, i) => (
+          {steps.map((step) => (
             <div
               key={step.num}
               className={`fade-up ${isVisible ? 'visible' : ''} group bg-cream-50 rounded-2xl border border-warm-200 p-6 text-center`}
