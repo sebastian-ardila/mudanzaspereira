@@ -1,10 +1,18 @@
 import { useState, useEffect, useCallback, type ReactNode } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { SITE_NAME, getWhatsAppUrl, getCallUrl, PHONE_DISPLAY, SCHEDULE } from '../utils/constants'
+import { SITE_NAME, SITE_URL, getWhatsAppUrl, getCallUrl, PHONE_DISPLAY, SCHEDULE } from '../utils/constants'
 
 interface MainLayoutProps {
   children: ReactNode
 }
+
+const mainPages = [
+  { href: '/mudanzas-residenciales', label: 'Residenciales' },
+  { href: '/mudanzas-empresariales', label: 'Empresariales' },
+  { href: '/trasteos-pereira', label: 'Trasteos' },
+  { href: '/acarreos-pereira', label: 'Acarreos' },
+  { href: '/precio-mudanza-pereira', label: 'Precios' },
+]
 
 export default function MainLayout({ children }: MainLayoutProps) {
   const { pathname } = useLocation()
@@ -12,11 +20,36 @@ export default function MainLayout({ children }: MainLayoutProps) {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SiteNavSchema />
       <Header />
       <main className={`flex-1 ${isHome ? '' : 'pt-18'}`}>{children}</main>
       <Footer />
       <FloatingWhatsApp />
     </div>
+  )
+}
+
+function SiteNavSchema() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'SiteNavigationElement',
+    name: 'Navegación principal',
+    url: SITE_URL,
+    hasPart: [
+      { '@type': 'WebPage', name: 'Inicio', url: SITE_URL },
+      ...mainPages.map((p) => ({
+        '@type': 'WebPage',
+        name: p.label,
+        url: `${SITE_URL}${p.href}`,
+      })),
+    ],
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
   )
 }
 
@@ -49,12 +82,6 @@ function Header() {
     }
   }, [isHome, navigate])
 
-  const navLinks = [
-    { hash: '#servicios', label: 'Servicios' },
-    { hash: '#cobertura', label: 'Cobertura' },
-    { hash: '#cotizacion', label: 'Cotización' },
-  ]
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
@@ -68,19 +95,29 @@ function Header() {
           {SITE_NAME}
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <button
-              key={link.hash}
-              type="button"
-              onClick={() => scrollToSection(link.hash)}
-              className={`text-sm font-medium transition-colors duration-300 cursor-pointer ${
-                solid ? 'text-warm-600 hover:text-dark-900' : 'text-white/80 hover:text-white'
+        <nav className="hidden md:flex items-center gap-6">
+          {mainPages.map((link) => (
+            <Link
+              key={link.href}
+              to={link.href}
+              className={`text-sm font-medium transition-colors duration-300 ${
+                pathname === link.href
+                  ? (solid ? 'text-amber-600' : 'text-amber-400')
+                  : (solid ? 'text-warm-600 hover:text-dark-900' : 'text-white/80 hover:text-white')
               }`}
             >
               {link.label}
-            </button>
+            </Link>
           ))}
+          <button
+            type="button"
+            onClick={() => scrollToSection('#cobertura')}
+            className={`text-sm font-medium transition-colors duration-300 cursor-pointer ${
+              solid ? 'text-warm-600 hover:text-dark-900' : 'text-white/80 hover:text-white'
+            }`}
+          >
+            Cobertura
+          </button>
           <a
             href={getWhatsAppUrl('Hola, necesito información sobre mudanzas')}
             className="inline-flex items-center gap-2 bg-wa-500 hover:bg-wa-600 text-white px-5 py-2.5 rounded-xl font-semibold transition-all duration-300 text-sm hover:scale-105"
@@ -113,22 +150,33 @@ function Header() {
       {/* Mobile menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-400 ${
-          menuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
+          menuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
         } ${solid ? 'bg-white/95 backdrop-blur-xl' : 'bg-dark-900/95 backdrop-blur-xl'}`}
       >
         <nav className="flex flex-col p-6 gap-1">
-          {navLinks.map((link) => (
-            <button
-              key={link.hash}
-              type="button"
-              onClick={() => scrollToSection(link.hash)}
-              className={`py-3 font-medium transition-colors text-left cursor-pointer ${
-                solid ? 'text-warm-700 hover:text-dark-900' : 'text-white/80 hover:text-white'
+          {mainPages.map((link) => (
+            <Link
+              key={link.href}
+              to={link.href}
+              onClick={() => setMenuOpen(false)}
+              className={`py-3 font-medium transition-colors ${
+                pathname === link.href
+                  ? 'text-amber-600'
+                  : (solid ? 'text-warm-700 hover:text-dark-900' : 'text-white/80 hover:text-white')
               }`}
             >
               {link.label}
-            </button>
+            </Link>
           ))}
+          <button
+            type="button"
+            onClick={() => scrollToSection('#cobertura')}
+            className={`py-3 font-medium transition-colors text-left cursor-pointer ${
+              solid ? 'text-warm-700 hover:text-dark-900' : 'text-white/80 hover:text-white'
+            }`}
+          >
+            Cobertura
+          </button>
           <a
             href={getWhatsAppUrl('Hola, necesito información sobre mudanzas')}
             className="inline-flex items-center justify-center gap-2 bg-wa-500 text-white px-5 py-3.5 rounded-xl font-semibold mt-3"
@@ -147,10 +195,10 @@ function Header() {
 function Footer() {
   return (
     <footer className="bg-dark-900 text-warm-300 relative noise overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/40 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-amber-500/40 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-16">
-        <div className="grid gap-10 md:grid-cols-3">
+        <div className="grid gap-10 md:grid-cols-4">
           <div>
             <h3 className="font-display text-white text-2xl font-bold mb-4">{SITE_NAME}</h3>
             <p className="text-warm-400 text-sm leading-relaxed mb-6">
@@ -179,6 +227,29 @@ function Footer() {
           </div>
 
           <div>
+            <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Servicios</h4>
+            <ul className="space-y-3 text-sm">
+              <li><Link to="/mudanzas-residenciales" className="hover:text-white transition-colors">Mudanzas Residenciales</Link></li>
+              <li><Link to="/mudanzas-empresariales" className="hover:text-white transition-colors">Mudanzas Empresariales</Link></li>
+              <li><Link to="/trasteos-pereira" className="hover:text-white transition-colors">Trasteos en Pereira</Link></li>
+              <li><Link to="/acarreos-pereira" className="hover:text-white transition-colors">Acarreos en Pereira</Link></li>
+              <li><Link to="/transporte-muebles-pereira" className="hover:text-white transition-colors">Transporte de Muebles</Link></li>
+              <li><Link to="/mudanzas-economicas-pereira" className="hover:text-white transition-colors">Mudanzas Económicas</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Información</h4>
+            <ul className="space-y-3 text-sm">
+              <li><Link to="/precio-mudanza-pereira" className="hover:text-white transition-colors">Precios de Mudanza</Link></li>
+              <li><Link to="/cuanto-cuesta-una-mudanza-en-pereira" className="hover:text-white transition-colors">¿Cuánto Cuesta?</Link></li>
+              <li><Link to="/como-preparar-una-mudanza" className="hover:text-white transition-colors">Cómo Preparar tu Mudanza</Link></li>
+              <li><Link to="/mudanzas-pereira" className="hover:text-white transition-colors">Mudanzas Pereira</Link></li>
+              <li><Link to="/mudanzas-dosquebradas" className="hover:text-white transition-colors">Mudanzas Dosquebradas</Link></li>
+            </ul>
+          </div>
+
+          <div>
             <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Contacto</h4>
             <ul className="space-y-3 text-sm">
               <li>
@@ -193,20 +264,6 @@ function Footer() {
               </li>
               <li className="text-warm-400">{SCHEDULE}</li>
               <li className="text-warm-400">Pereira y Dosquebradas, Risaralda</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Enlaces</h4>
-            <ul className="space-y-3 text-sm">
-              <li><Link to="/" className="hover:text-white transition-colors">Inicio</Link></li>
-              <li><Link to="/mudanzas-residenciales" className="hover:text-white transition-colors">Mudanzas Residenciales</Link></li>
-              <li><Link to="/mudanzas-empresariales" className="hover:text-white transition-colors">Mudanzas Empresariales</Link></li>
-              <li><Link to="/mudanzas-pereira" className="hover:text-white transition-colors">Mudanzas Pereira</Link></li>
-              <li><Link to="/mudanzas-dosquebradas" className="hover:text-white transition-colors">Mudanzas Dosquebradas</Link></li>
-              <li><Link to="/trasteos-pereira" className="hover:text-white transition-colors">Trasteos</Link></li>
-              <li><Link to="/acarreos-pereira" className="hover:text-white transition-colors">Acarreos</Link></li>
-              <li><Link to="/precio-mudanza-pereira" className="hover:text-white transition-colors">Precios</Link></li>
             </ul>
           </div>
         </div>

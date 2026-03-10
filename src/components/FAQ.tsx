@@ -28,7 +28,7 @@ export default function FAQ({ items }: FAQProps) {
                 {item.q}
               </span>
               <span
-                className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+                className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
                   isOpen ? 'bg-amber-500 text-dark-900 rotate-45' : 'bg-warm-100 text-warm-500'
                 }`}
               >

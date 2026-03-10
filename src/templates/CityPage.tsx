@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Head from '../seo/Head'
 import MainLayout from '../layouts/MainLayout'
+import Breadcrumb from '../components/Breadcrumb'
 import Button from '../components/Button'
 import Services from '../sections/Services'
 import CTABanner from '../components/CTABanner'
@@ -18,23 +19,24 @@ export default function CityPage({ city }: CityPageProps) {
     <>
       <Head
         title={`Mudanzas en ${city.name} | Cotización Gratis por WhatsApp`}
-        description={`Servicio profesional de mudanzas en ${city.name}. Cubrimos las ${city.communes.length} comunas y más de ${totalZones} barrios. Mudanzas residenciales, acarreos y trasteos. Cotización gratis.`}
+        description={`Coordinamos mudanzas, trasteos y acarreos en ${city.name}. Cubrimos las ${city.communes.length} comunas y más de ${totalZones} barrios con operadores verificados. Cotización gratis.`}
         canonical={city.page}
       />
       <MainLayout>
-        <section className="bg-gradient-to-b from-primary-50 to-white py-12 md:py-16">
+        <section className="py-12 md:py-16">
           <div className="max-w-4xl mx-auto px-4">
-            <nav className="text-sm text-gray-500 mb-6">
-              <Link to="/" className="hover:text-primary-600">Inicio</Link>
-              <span className="mx-2">/</span>
-              <span className="text-gray-700">Mudanzas {city.name}</span>
-            </nav>
+            <Breadcrumb
+              items={[
+                { label: 'Inicio', href: '/' },
+                { label: `Mudanzas ${city.name}` },
+              ]}
+            />
 
-            <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">
+            <h1 className="font-display text-3xl md:text-4xl font-extrabold text-dark-900 mb-6">
               Mudanzas en {city.name}
             </h1>
-            <p className="text-lg text-gray-600 mb-8">
-              Servicio completo de mudanzas en {city.name}. Cubrimos las {city.communes.length} comunas y más de {totalZones} barrios y sectores de la ciudad. Mudanzas residenciales, empresariales, acarreos, trasteos y transporte de muebles con atención las 24 horas por WhatsApp.
+            <p className="text-lg text-warm-600 mb-8 leading-relaxed">
+              Coordinamos mudanzas, trasteos y acarreos en {city.name} con operadores verificados. Cubrimos las {city.communes.length} comunas y más de {totalZones} barrios y sectores. Atención 24 horas por WhatsApp.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -48,9 +50,9 @@ export default function CityPage({ city }: CityPageProps) {
           </div>
         </section>
 
-        <section className="py-12 bg-white">
+        <section className="py-12 bg-cream-50">
           <div className="max-w-4xl mx-auto px-4">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            <h2 className="font-display text-2xl font-bold text-dark-900 mb-6">
               Comunas de {city.name}
             </h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -58,10 +60,10 @@ export default function CityPage({ city }: CityPageProps) {
                 <Link
                   key={commune.slug}
                   to={commune.page}
-                  className="bg-gray-50 rounded-xl p-5 hover:bg-primary-50 transition-colors border border-gray-100 hover:border-primary-200"
+                  className="bg-white rounded-xl p-5 hover:bg-amber-50 transition-colors border border-warm-200 hover:border-amber-300 shadow-sm"
                 >
-                  <h3 className="font-semibold text-gray-900 mb-1">{commune.name}</h3>
-                  <p className="text-sm text-gray-500">{commune.zones.length} barrios y sectores</p>
+                  <h3 className="font-semibold text-dark-900 mb-1">{commune.name}</h3>
+                  <p className="text-sm text-warm-600">{commune.zones.length} barrios y sectores</p>
                 </Link>
               ))}
             </div>
