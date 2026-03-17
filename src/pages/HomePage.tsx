@@ -15,7 +15,7 @@ export default function HomePage() {
   return (
     <>
       <Head
-        title="Mudanzas y Trasteos en Pereira y Dosquebradas | Acarreos Profesionales"
+        title="Mudanzas en Pereira y Dosquebradas | Trasteos y Acarreos"
         description="Coordinamos tu mudanza, trasteo o acarreo en Pereira y Dosquebradas con operadores verificados. Cotización gratis por WhatsApp. Atención 24 horas."
         canonical="/"
       />

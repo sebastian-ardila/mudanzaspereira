@@ -3,7 +3,7 @@ import MainLayout from '../layouts/MainLayout'
 import Breadcrumb from '../components/Breadcrumb'
 import Button from '../components/Button'
 import CTABanner from '../components/CTABanner'
-import { getWhatsAppUrl, getCallUrl, PHONE_DISPLAY } from '../utils/constants'
+import { getWhatsAppUrl, getCallUrl, PHONE_DISPLAY, SITE_URL } from '../utils/constants'
 
 interface InfoPageProps {
   title: string
@@ -14,9 +14,26 @@ interface InfoPageProps {
 }
 
 export default function InfoPage({ title, h1, metaDescription, canonical, content }: InfoPageProps) {
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: h1,
+    description: metaDescription,
+    url: `${SITE_URL}${canonical}`,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Mudanzas Pereira',
+      url: SITE_URL,
+    },
+  }
+
   return (
     <>
       <Head title={title} description={metaDescription} canonical={canonical} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <MainLayout>
         <article className="py-12 md:py-16">
           <div className="max-w-3xl mx-auto px-4">

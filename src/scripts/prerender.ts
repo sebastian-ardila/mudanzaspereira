@@ -22,21 +22,21 @@ function getAllPages(): PageData[] {
   // Home
   pages.push({
     path: '/',
-    title: 'Mudanzas y Trasteos en Pereira y Dosquebradas | Acarreos Profesionales',
+    title: 'Mudanzas en Pereira y Dosquebradas | Trasteos y Acarreos',
     description: 'Coordinamos tu mudanza, trasteo o acarreo en Pereira y Dosquebradas con operadores verificados. Cotización gratis por WhatsApp. Atención 24 horas.',
-    h1: 'Mudanzas y Trasteos en Pereira y Dosquebradas',
+    h1: 'Mudanzas en Pereira y Dosquebradas',
     content: 'Coordinamos mudanzas, trasteos y acarreos en Pereira y Dosquebradas con operadores verificados. Cotización rápida por WhatsApp. Atención las 24 horas. Mudanzas residenciales, trasteos de apartamentos, mudanzas empresariales, acarreos, transporte de muebles, carga y descarga.',
     canonical: '/',
   })
 
   // Service pages
   const servicePages = [
-    { path: '/mudanzas-residenciales', title: 'Mudanzas Residenciales en Pereira | Casas y Apartamentos', h1: 'Mudanzas Residenciales en Pereira', desc: 'Coordinamos mudanzas residenciales en Pereira y Dosquebradas. Casas, apartamentos y trasteos completos con operadores verificados. Cotización gratis por WhatsApp.' },
+    { path: '/mudanzas-residenciales', title: 'Mudanzas Residenciales en Pereira | Casas y Apartamentos', h1: 'Mudanzas Residenciales en Pereira', desc: 'Coordinamos mudanzas residenciales en Pereira y Dosquebradas. Casas y apartamentos con operadores verificados. Cotización gratis por WhatsApp.' },
     { path: '/mudanzas-empresariales', title: 'Mudanzas Empresariales en Pereira | Oficinas y Locales', h1: 'Mudanzas Empresariales en Pereira', desc: 'Coordinamos mudanzas empresariales en Pereira. Traslado de oficinas, locales comerciales y equipos con operadores verificados. Cotización por WhatsApp.' },
     { path: '/mudanzas-economicas-pereira', title: 'Mudanzas Económicas en Pereira | Precios Justos', h1: 'Mudanzas Económicas en Pereira', desc: 'Coordinamos mudanzas y trasteos económicos en Pereira con operadores verificados. Precios accesibles. Cotización gratis por WhatsApp.' },
     { path: '/mudanzas-pequenas-pereira', title: 'Mudanzas Pequeñas en Pereira | Servicio Rápido', h1: 'Mudanzas Pequeñas en Pereira', desc: 'Coordinamos mudanzas pequeñas y acarreos en Pereira. Ideal para pocos muebles o electrodomésticos. Cotización por WhatsApp.' },
     { path: '/mudanzas-empresariales-pereira', title: 'Mudanzas Empresariales en Pereira | Trasteos de Oficinas', h1: 'Mudanzas y Trasteos Empresariales en Pereira', desc: 'Coordinamos mudanzas empresariales en Pereira y Dosquebradas. Traslado de oficinas y locales con operadores verificados. Cotización por WhatsApp.' },
-    { path: '/acarreos-pereira', title: 'Acarreos en Pereira | Transporte de Carga', h1: 'Acarreos en Pereira y Dosquebradas', desc: 'Coordinamos acarreos en Pereira y Dosquebradas. Transporte de objetos individuales, electrodomésticos y cargas puntuales con operadores verificados.' },
+    { path: '/acarreos-pereira', title: 'Acarreos en Pereira | Transporte de Carga', h1: 'Acarreos en Pereira y Dosquebradas', desc: 'Coordinamos acarreos en Pereira y Dosquebradas. Transporte de objetos, electrodomésticos y cargas puntuales con operadores verificados. Cotización por WhatsApp.' },
     { path: '/trasteos-pereira', title: 'Trasteos en Pereira | Servicio Profesional de Trasteos', h1: 'Trasteos en Pereira y Dosquebradas', desc: 'Coordinamos trasteos en Pereira y Dosquebradas con operadores verificados. Trasteos residenciales, empresariales y acarreos. Cotización gratis por WhatsApp.' },
     { path: '/transporte-muebles-pereira', title: 'Transporte de Muebles en Pereira | Servicio Profesional', h1: 'Transporte de Muebles en Pereira', desc: 'Coordinamos transporte de muebles en Pereira con operadores verificados. Sofás, camas, neveras y más. Cotización gratis por WhatsApp.' },
   ]
@@ -101,8 +101,8 @@ function escapeHtml(str: string): string {
 }
 
 function renderPage(page: PageData): string {
-  // SEO content block that crawlers can read without JS
-  const seoBlock = `<div id="seo-content" style="position:absolute;left:-9999px;overflow:hidden;width:1px;height:1px"><h1>${escapeHtml(page.h1)}</h1><p>${escapeHtml(page.content)}</p></div>`
+  // SEO content block that crawlers can read without JS (visually hidden but not off-screen)
+  const seoBlock = `<div id="seo-content" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0" aria-hidden="true"><h1>${escapeHtml(page.h1)}</h1><p>${escapeHtml(page.content)}</p></div>`
 
   let html = template
 

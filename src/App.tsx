@@ -22,7 +22,7 @@ const servicePages = [
     path: '/mudanzas-residenciales',
     title: 'Mudanzas Residenciales en Pereira | Casas y Apartamentos',
     h1: 'Mudanzas Residenciales en Pereira',
-    metaDescription: 'Coordinamos mudanzas residenciales en Pereira y Dosquebradas. Casas, apartamentos y trasteos completos con operadores verificados. Cotización gratis por WhatsApp.',
+    metaDescription: 'Coordinamos mudanzas residenciales en Pereira y Dosquebradas. Casas y apartamentos con operadores verificados. Cotización gratis por WhatsApp.',
     content: [
       'Coordinamos mudanzas residenciales en Pereira y Dosquebradas para casas y apartamentos de cualquier tamaño. Asignamos operadores verificados con el vehículo adecuado según la cantidad de carga y la distancia de tu traslado.',
       'El servicio incluye personal de carga y descarga, transporte seguro y cuidado de tus pertenencias. Ya sea un apartaestudio o una casa grande, gestionamos todo para que tu mudanza sea simple y sin estrés.',
@@ -64,6 +64,8 @@ const servicePages = [
   },
   {
     path: '/mudanzas-empresariales-pereira',
+    // canonical apunta a /mudanzas-empresariales para consolidar señales SEO y evitar contenido duplicado
+    canonical: '/mudanzas-empresariales',
     title: 'Mudanzas Empresariales en Pereira | Trasteos de Oficinas',
     h1: 'Mudanzas y Trasteos Empresariales en Pereira',
     metaDescription: 'Coordinamos mudanzas empresariales en Pereira y Dosquebradas. Traslado de oficinas y locales con operadores verificados. Cotización por WhatsApp.',
@@ -77,7 +79,7 @@ const servicePages = [
     path: '/acarreos-pereira',
     title: 'Acarreos en Pereira | Transporte de Carga',
     h1: 'Acarreos en Pereira y Dosquebradas',
-    metaDescription: 'Coordinamos acarreos en Pereira y Dosquebradas. Transporte de objetos individuales, electrodomésticos y cargas puntuales con operadores verificados. Cotización por WhatsApp.',
+    metaDescription: 'Coordinamos acarreos en Pereira y Dosquebradas. Transporte de objetos, electrodomésticos y cargas puntuales con operadores verificados. Cotización por WhatsApp.',
     content: [
       'Coordinamos acarreos en Pereira para que puedas mover objetos individuales, electrodomésticos o cargas puntuales sin contratar una mudanza completa. Ideal cuando compras un mueble, vendes un electrodoméstico o necesitas transportar algo puntual.',
       'Te asignamos un operador con el vehículo adecuado para tu carga: desde una camioneta para objetos pequeños hasta vehículos más grandes. Siempre con personal de apoyo para carga y descarga.',
@@ -225,7 +227,7 @@ export default function App() {
                   title={sp.title}
                   h1={sp.h1}
                   metaDescription={sp.metaDescription}
-                  canonical={sp.path}
+                  canonical={'canonical' in sp ? (sp as { canonical: string }).canonical : sp.path}
                   content={sp.content}
                 />
               }

@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://mudanzaspereira.co/sitemap.xml
+
+# LLM discoverability
+# https://mudanzaspereira.co/llms.txt

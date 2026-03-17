@@ -13,7 +13,7 @@ const intros: Record<number, (zone: string, city: string) => string> = {
 
 const serviceDescriptions: Record<number, (zone: string) => string> = {
   0: (zone) =>
-    `En ${zone} ofrecemos mudanzas residenciales completas, incluyendo apartamentos, casas y habitaciones. Nuestro equipo se encarga de la carga, transporte y descarga de todos tus muebles y pertenencias.`,
+    `En ${zone} coordinamos mudanzas residenciales completas, incluyendo apartamentos, casas y habitaciones. El equipo asignado se encarga de la carga, transporte y descarga de todos tus muebles y pertenencias.`,
   1: (zone) =>
     `Brindamos servicios de acarreos y trasteos en ${zone} para objetos individuales, electrodomésticos o cargas pequeñas. Ideal cuando necesitas mover pocas cosas sin contratar una mudanza completa.`,
   2: (zone) =>
@@ -25,7 +25,7 @@ const serviceDescriptions: Record<number, (zone: string) => string> = {
 const faqSets: Record<number, { q: string; a: string }[]> = {
   0: [
     { q: '¿Cuánto cuesta una mudanza en {zone}?', a: 'El precio depende del volumen de carga, la distancia y los servicios adicionales que necesites. Contáctanos por WhatsApp para una cotización rápida y sin compromiso.' },
-    { q: '¿Hacen mudanzas pequeñas en {zone}?', a: 'Sí, realizamos mudanzas de todos los tamaños: desde mover unos pocos muebles hasta trasladar una casa completa.' },
+    { q: '¿Hacen mudanzas pequeñas en {zone}?', a: 'Sí, coordinamos mudanzas de todos los tamaños: desde mover unos pocos muebles hasta trasladar una casa completa.' },
     { q: '¿Qué incluye el servicio de mudanza?', a: 'Incluye personal de carga y descarga, transporte en vehículo adecuado y cuidado de tus pertenencias. Servicios de embalaje disponibles bajo solicitud.' },
   ],
   1: [
@@ -34,7 +34,7 @@ const faqSets: Record<number, { q: string; a: string }[]> = {
     { q: '¿Cómo puedo pedir una cotización?', a: 'Escríbenos por WhatsApp con los detalles de tu mudanza (origen, destino y qué necesitas mover) y te respondemos en minutos.' },
   ],
   2: [
-    { q: '¿Ofrecen servicio de embalaje en {zone}?', a: 'Sí, ofrecemos servicio de embalaje para proteger tus pertenencias durante el traslado. Pregunta por este servicio adicional al solicitar tu cotización.' },
+    { q: '¿Coordinan servicio de embalaje en {zone}?', a: 'Sí, coordinamos embalaje con los operadores aliados para proteger tus pertenencias durante el traslado. Pregunta por este servicio adicional al solicitar tu cotización.' },
     { q: '¿Pueden mover electrodomésticos grandes?', a: 'Sí, contamos con experiencia y equipos para mover neveras, lavadoras, estufas y otros electrodomésticos de gran tamaño.' },
     { q: '¿Qué formas de pago aceptan?', a: 'Aceptamos efectivo, transferencia bancaria y Nequi. Consulta las opciones al momento de tu cotización.' },
   ],
