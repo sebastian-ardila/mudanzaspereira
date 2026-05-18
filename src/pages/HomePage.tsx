@@ -1,15 +1,17 @@
 import Head from '../seo/Head'
 import JsonLd from '../seo/JsonLd'
 import MainLayout from '../layouts/MainLayout'
-import Hero from '../sections/Hero'
-import TrustBadges from '../sections/TrustBadges'
-import HowItWorks from '../sections/HowItWorks'
+import BentoHero from '../sections/BentoHero'
+import GuaranteeStrip from '../sections/GuaranteeStrip'
+import ProcessTimeline from '../sections/ProcessTimeline'
 import Services from '../sections/Services'
+import ComparisonTable from '../sections/ComparisonTable'
 import Coverage from '../sections/Coverage'
-import Benefits from '../sections/Benefits'
-import HomeFAQ from '../sections/HomeFAQ'
+import Testimonials from '../sections/Testimonials'
 import QuoteForm from '../sections/QuoteForm'
+import HomeFAQ from '../sections/HomeFAQ'
 import CTABanner from '../components/CTABanner'
+import PageTransition from '../components/PageTransition'
 
 export default function HomePage() {
   return (
@@ -21,15 +23,18 @@ export default function HomePage() {
       />
       <JsonLd />
       <MainLayout>
-        <Hero />
-        <TrustBadges />
-        <HowItWorks />
-        <Services />
-        <Benefits />
-        <Coverage />
-        <QuoteForm />
-        <HomeFAQ />
-        <CTABanner />
+        <PageTransition>
+          <BentoHero />
+          <GuaranteeStrip />
+          <ProcessTimeline />
+          <Services />
+          <ComparisonTable />
+          <Coverage />
+          <Testimonials />
+          <QuoteForm />
+          <HomeFAQ />
+          <CTABanner />
+        </PageTransition>
       </MainLayout>
     </>
   )

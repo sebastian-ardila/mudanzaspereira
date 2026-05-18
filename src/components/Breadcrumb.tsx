@@ -23,25 +23,22 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <nav aria-label="Breadcrumb" className="text-sm text-warm-500 mb-6">
-        <ol className="flex flex-wrap items-center gap-1">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <nav aria-label="Breadcrumb" className="text-sm text-ink-3 mb-6">
+        <ol className="flex flex-wrap items-center gap-1.5">
           {items.map((item, i) => (
-            <li key={i} className="flex items-center gap-1">
+            <li key={i} className="flex items-center gap-1.5">
               {i > 0 && (
-                <svg className="w-3.5 h-3.5 text-warm-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                <svg width={12} height={12} className="text-ink-3/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               )}
               {item.href ? (
-                <Link to={item.href} className="hover:text-amber-600 transition-colors">
+                <Link to={item.href} className="hover:text-accent transition-colors">
                   {item.label}
                 </Link>
               ) : (
-                <span className="text-warm-700 font-medium">{item.label}</span>
+                <span className="text-ink font-medium">{item.label}</span>
               )}
             </li>
           ))}

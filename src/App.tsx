@@ -1,5 +1,6 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import { getCities, getAllZones, getAllCommunes } from './utils/zones'
 import ScrollToTop from './components/ScrollToTop'
 
@@ -12,8 +13,8 @@ const InfoPage = lazy(() => import('./pages/InfoPage'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 
 const Loading = () => (
-  <div className="flex items-center justify-center min-h-screen">
-    <div className="w-8 h-8 border-4 border-primary-500 border-t-transparent rounded-full animate-spin" />
+  <div className="flex items-center justify-center min-h-screen bg-bg">
+    <div className="w-8 h-8 border-4 border-accent border-t-transparent rounded-full animate-spin" />
   </div>
 )
 
@@ -170,14 +171,16 @@ export default function App() {
   const cities = getCities()
   const allZones = getAllZones()
   const allCommunes = getAllCommunes()
+  const location = useLocation()
 
   return (
     <>
       <ScrollToTop />
       <Suspense fallback={<Loading />}>
-        <Routes>
-          {/* Home */}
-          <Route path="/" element={<HomePage />} />
+        <AnimatePresence mode="wait" initial={false}>
+          <Routes location={location} key={location.pathname}>
+            {/* Home */}
+            <Route path="/" element={<HomePage />} />
 
           {/* City pages */}
           {cities.map((city) => (
@@ -251,9 +254,10 @@ export default function App() {
             />
           ))}
 
-          {/* 404 */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+            {/* 404 */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </AnimatePresence>
       </Suspense>
     </>
   )

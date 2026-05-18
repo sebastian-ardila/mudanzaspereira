@@ -7,5 +7,13 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          framer: ['framer-motion'],
+          router: ['react-router-dom'],
+        },
+      },
+    },
   },
 })

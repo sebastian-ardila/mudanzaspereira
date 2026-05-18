@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
-import { useInView } from '../hooks/useInView'
 import SectionTitle from '../components/SectionTitle'
 import FAQ from '../components/FAQ'
+import RevealOnScroll from '../components/RevealOnScroll'
 
 const faqItems = [
   {
@@ -31,8 +31,6 @@ const faqItems = [
 ]
 
 export default function HomeFAQ() {
-  const { ref, isVisible } = useInView()
-
   useEffect(() => {
     const schema = {
       '@context': 'https://schema.org',
@@ -40,26 +38,25 @@ export default function HomeFAQ() {
       mainEntity: faqItems.map((item) => ({
         '@type': 'Question',
         name: item.q,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: item.a,
-        },
+        acceptedAnswer: { '@type': 'Answer', text: item.a },
       })),
     }
     const script = document.createElement('script')
     script.type = 'application/ld+json'
     script.textContent = JSON.stringify(schema)
     document.head.appendChild(script)
-    return () => { script.remove() }
+    return () => {
+      script.remove()
+    }
   }, [])
 
   return (
-    <section ref={ref} className="py-20 md:py-28 bg-cream-50">
+    <section className="py-20 md:py-28 bg-bg">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
-        <SectionTitle tag="FAQ" title="Preguntas frecuentes sobre mudanzas y trasteos" />
-        <div className={`fade-up ${isVisible ? 'visible' : ''}`}>
+        <SectionTitle tag="FAQ" title="Preguntas frecuentes" centered />
+        <RevealOnScroll>
           <FAQ items={faqItems} />
-        </div>
+        </RevealOnScroll>
       </div>
     </section>
   )
