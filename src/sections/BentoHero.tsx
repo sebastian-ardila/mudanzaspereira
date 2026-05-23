@@ -128,7 +128,7 @@ export default function BentoHero() {
             </div>
           </motion.div>
 
-          {/* Tile B — Orange logo */}
+          {/* Tile B — Brand logo on cream */}
           <motion.button
             type="button"
             onClick={() => scrollToQuote()}
@@ -137,34 +137,40 @@ export default function BentoHero() {
             whileInView="visible"
             viewport={viewportOnce}
             whileHover={{ y: -3 }}
-            className="sm:col-span-5 sm:row-span-1 relative overflow-hidden rounded-lg bg-accent text-ink-invert border border-transparent flex items-center justify-center min-h-[240px] cursor-pointer text-left"
-            style={{
-              boxShadow: 'var(--shadow-tile)',
-              backgroundImage:
-                'radial-gradient(circle at 25% 20%, rgba(255,255,255,0.18) 0%, transparent 55%), linear-gradient(135deg, #ff6a3c 0%, #ff5b2a 50%, #e74514 100%)',
-            }}
+            className="sm:col-span-5 sm:row-span-1 relative overflow-hidden rounded-lg bg-surface-2 text-ink border border-line flex items-center justify-center min-h-[240px] cursor-pointer text-left"
+            style={{ boxShadow: 'var(--shadow-tile)' }}
             aria-label="Cotiza tu mudanza"
           >
-            <div className="absolute top-3.5 left-3.5 flex items-center gap-1.5">
-              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-xs bg-white/15 backdrop-blur-md text-[0.6rem] uppercase tracking-[0.14em] font-bold">
-                <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
-                Activo
-              </span>
-            </div>
-            <div className="absolute top-3.5 right-3.5">
-              <span className="inline-flex px-2 py-0.5 rounded-xs bg-white/15 backdrop-blur-md text-[0.6rem] uppercase tracking-[0.14em] font-bold">
-                Risaralda
-              </span>
-            </div>
-
+            {/* Subtle warm glow */}
             <div
               aria-hidden
               className="absolute inset-0 pointer-events-none"
               style={{
                 backgroundImage:
-                  'radial-gradient(circle at 50% 55%, rgba(255,255,255,0.08) 25%, transparent 26%), radial-gradient(circle at 50% 55%, rgba(255,255,255,0.05) 38%, transparent 39%)',
+                  'radial-gradient(circle at 25% 25%, rgba(255,91,42,0.10) 0%, transparent 55%), radial-gradient(circle at 80% 100%, rgba(255,91,42,0.06) 0%, transparent 55%)',
               }}
             />
+            {/* Concentric rings (subtle ink) */}
+            <div
+              aria-hidden
+              className="absolute inset-0 pointer-events-none opacity-40"
+              style={{
+                backgroundImage:
+                  'radial-gradient(circle at 50% 55%, rgba(15,17,21,0.06) 25%, transparent 26%), radial-gradient(circle at 50% 55%, rgba(15,17,21,0.04) 38%, transparent 39%)',
+              }}
+            />
+
+            <div className="absolute top-3.5 left-3.5 flex items-center gap-1.5">
+              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-xs bg-accent-soft text-accent-strong text-[0.6rem] uppercase tracking-[0.14em] font-bold">
+                <span className="w-1 h-1 rounded-full bg-accent animate-pulse" />
+                Activo
+              </span>
+            </div>
+            <div className="absolute top-3.5 right-3.5">
+              <span className="inline-flex px-2 py-0.5 rounded-xs bg-ink/[0.06] text-ink-2 text-[0.6rem] uppercase tracking-[0.14em] font-bold">
+                Risaralda
+              </span>
+            </div>
 
             <motion.div
               animate={{ y: [0, -8, 0] }}
@@ -176,7 +182,7 @@ export default function BentoHero() {
                 <img
                   src="/mudanzaspereira.png"
                   alt={`${SITE_NAME} logo`}
-                  className="w-28 md:w-40 h-auto invert"
+                  className="w-28 md:w-40 h-auto"
                   width={400}
                   height={283}
                 />
@@ -185,12 +191,12 @@ export default function BentoHero() {
 
             <div className="absolute bottom-3 left-3.5 right-3.5 flex items-end justify-between">
               <div>
-                <div className="font-display text-sm md:text-base font-bold leading-tight">{SITE_NAME}</div>
-                <div className="text-[0.6rem] uppercase tracking-[0.14em] font-semibold opacity-80">
+                <div className="font-display text-sm md:text-base font-bold leading-tight text-ink">{SITE_NAME}</div>
+                <div className="text-[0.6rem] uppercase tracking-[0.14em] font-semibold text-ink-3">
                   Mudanzas · Trasteos · Acarreos
                 </div>
               </div>
-              <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white text-accent shrink-0">
+              <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-accent text-ink-invert shrink-0">
                 <svg width={12} height={12} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.8}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
